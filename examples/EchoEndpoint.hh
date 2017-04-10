@@ -33,7 +33,7 @@
 #ifndef _ZQRPC_ECHO_ENDPOINT_HH_
 #define _ZQRPC_ECHO_ENDPOINT_HH_
 
-#define ECHO_ENDPOINT_PORT "tcp://127.0.0.1:9089"
+#define ECHO_ENDPOINT_PORT "tcp://127.0.0.1:10000"
 #define ECHO_ENDPOINT_FILE "ipc:///tmp/echo.sock"
 
 #endif

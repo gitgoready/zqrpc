@@ -30,7 +30,7 @@
  *  EchoServer.cc : Echo Server Demo
  *
  */
-#include <unistd.h>
+//#include <unistd.h>
 #include <signal.h>
 #include <boost/bind.hpp>
 #include <stdio.h>
@@ -38,7 +38,15 @@
 #include "zqrpc.hpp"
 #include "echo.pb.h"
 #include "echo.zqrpc.h"
+#include "dqlib.pb.h"
+#include "dqlib.zqrpc.h"
 #include "EchoEndpoint.hh"
+
+#include <dlfcn.h>
+#include "inirw.h"
+#ifdef WIN32
+#include <Windows.h>
+#endif
 
 class EchoServiceImpl : public echo::EchoService {
 public:
@@ -52,8 +60,104 @@ public:
 	virtual void Echo2(const ::echo::EchoRequest* request,
 	                   ::echo::EchoResponse* response) {
 		std::cerr << " Received2 " << request->DebugString() << std::endl;
-		sleep(3);
+		//sleep(3);
 		response->set_response(std::string("You sent2: ") + request->message());
+	}
+};
+
+using namespace std;
+void* handle=NULL;
+typedef void (*FPTR)(char* req_type, unsigned char* req_arg_msg, int length, unsigned char* out, int* out_length, char** err);
+FPTR fptr = NULL;
+char err_buf[256] = "\0";
+int out_len = 5120;
+unsigned char* out = new unsigned char[out_len];
+unsigned char* in = new unsigned char[out_len];
+char* host = new char[64];
+
+void init()
+{
+    iniFileLoad("testConfig.ini");
+    iniGetString("test","server_host",host,128,"");
+
+    if (handle == NULL){
+        handle = dlopen("./libdqlibgo.so.1.2", RTLD_LAZY);// RTLD_GLOBALRTLD_NOW
+        printf("dll init loaded\n");
+    }
+    if (handle != NULL){
+        fptr = (FPTR)dlsym(handle, "ProcessRequest");
+        printf("function init loaded\n");
+    }
+}
+
+
+void PRequest(char* req_type, unsigned char* req_arg_msg,int length, unsigned char* out, int* out_length, char** error)
+{
+    if (handle == NULL) {
+        handle = dlopen("./libdqlibgo.so.1.2", RTLD_LAZY);// RTLD_GLOBALRTLD_NOW
+        printf("dll reloaded\n");
+        if (handle == NULL) {
+            strcpy(err_buf,"dlopen ");
+            strcat(err_buf,(char*)dlerror());
+            *error = err_buf;
+            return;
+        }
+    }
+
+    if (fptr == NULL) {
+        fptr = (FPTR)dlsym(handle, "ProcessRequest");
+        printf("function reloaded\n");
+        if (fptr == NULL) {
+            strcpy(err_buf,"dlsym  ");
+            strcat(err_buf,(char*)dlerror());
+            *error = err_buf;
+            return;
+        }
+    }
+
+    (*fptr)(req_type,req_arg_msg,length,out,out_length,error);
+    return;
+
+}
+
+class DQServiceImpl : public echo::DQService {
+public:
+	DQServiceImpl() {};
+
+	virtual void CLAService(const ::echo::MvoAssetAllocationInput* request,
+		::echo::MvoAssetAllocationOutput* response)
+	{
+		int in_len = request->ByteSize();
+		request->SerializeToArray(in, in_len);
+		//cout << "loadlibrary start. " <<  endl;
+        try
+        {
+            if (fptr != NULL)
+            {
+                char* error=NULL;
+                //cout << "ProcessRequest start. " << endl;
+                PRequest("MVOASSETALLOCATION", in, in_len, out, &out_len,&error);
+                if(error!=NULL)
+                {
+                    cout << "error occurs:" << error;
+                    return;
+                }
+
+                response->ParseFromArray(out, out_len);
+            }
+            else{
+                init();
+                cout << "Reload library";
+            }
+        }
+        catch (const std::exception& e)
+        {
+            cout << e.what();
+        }
+		catch (...)
+		{
+			cout << "Unknown exception: " << endl;
+		}
 	}
 };
 
@@ -64,15 +168,23 @@ void OnExit(int sig)
 
 int main(int argc, char *argv[])
 {
+    init();
+
 	google::InitGoogleLogging(argv[0]);
 	zmq::context_t* context = 0;
 	try {
-		context = new zmq::context_t(1);
+		context = new zmq::context_t(4);
 		zqrpc::RpcServer rpc_server(context);
-		rpc_server.EndPoint(ECHO_ENDPOINT_PORT);
+		rpc_server.EndPoint(host);//ECHO_ENDPOINT_PORT
+
 		zqrpc::ServiceBase *service = new EchoServiceImpl();
 		rpc_server.RegisterService(service);
-		rpc_server.Start(5);
+		zqrpc::ServiceBase *servicedq = new DQServiceImpl();
+		rpc_server.RegisterService(servicedq);
+
+        cout << "Serving requests on "<< host << endl;
+		rpc_server.Start(20);
+
 	} catch (zmq::error_t& e) {
 		std::cerr << "ZMQ EXCEPTION : " << e.what() << std::endl;
 	} catch (std::exception& e) {
@@ -81,5 +193,6 @@ int main(int argc, char *argv[])
 		std::cerr << " UNTRAPPED EXCEPTION " << std::endl;
 	}
 	if (context) delete context;
+
 	return 0;
 }

@@ -32,22 +32,49 @@
  */
 #ifndef _ZQRPC_ZMQ_UTILS_HPP_
 #define _ZQRPC_ZMQ_UTILS_HPP_
-#include <arpa/inet.h>
-#include <sys/time.h>
+
 
 #include "ZError.hpp"
 #include "ZSocket.hpp"
 #include "ZController.hpp"
+#ifdef WIN32
 
-namespace zqrpc {
-namespace {
-inline long mstime()
+#else
+ //#include <arpa/inet.h>
+#include <sys/time.h>
+#endif
+
+namespace zqrpc 
 {
-	struct timeval tv;
-	gettimeofday (&tv, NULL);
-	return (long) (tv.tv_sec * 1000 + tv.tv_usec / 1000);
-}
-}
+	namespace 
+	{
+#ifdef WIN32
+		inline int gettimeofday(struct timeval *tp, void *tzp)
+		{
+			time_t clock;
+			struct tm tm;
+			SYSTEMTIME wtm;
+			GetLocalTime(&wtm);
+			tm.tm_year = wtm.wYear - 1900;
+			tm.tm_mon = wtm.wMonth - 1;
+			tm.tm_mday = wtm.wDay;
+			tm.tm_hour = wtm.wHour;
+			tm.tm_min = wtm.wMinute;
+			tm.tm_sec = wtm.wSecond;
+			tm.tm_isdst = -1;
+			clock = mktime(&tm);
+			tp->tv_sec = clock;
+			tp->tv_usec = wtm.wMilliseconds * 1000;
+			return (0);
+		}
+#endif
+		inline long mstime()
+		{
+			struct timeval tv;
+			gettimeofday (&tv, NULL);
+			return (long) (tv.tv_sec * 1000 + tv.tv_usec / 1000);
+		}
+	}
 }
 
 #endif
