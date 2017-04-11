@@ -1,4 +1,4 @@
-# Install script for directory: /media/psf/Home/Documents/work-ubuntu/zqrpc-master/examples
+# Install script for directory: /media/psf/Home/Documents/work-ubuntu/zqrpc/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

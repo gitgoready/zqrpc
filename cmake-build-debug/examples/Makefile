@@ -48,10 +48,10 @@ RM = /media/psf/Home/Documents/work-ubuntu/clion-2016.3.1/bin/cmake/bin/cmake -E
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /media/psf/Home/Documents/work-ubuntu/zqrpc-master
+CMAKE_SOURCE_DIR = /media/psf/Home/Documents/work-ubuntu/zqrpc
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug
+CMAKE_BINARY_DIR = /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -124,14 +124,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug/CMakeFiles /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug/examples/CMakeFiles/progress.marks
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug/CMakeFiles 0
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug/CMakeFiles /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug/examples/CMakeFiles/progress.marks
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,22 +141,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 examples/CMakeFiles/EchoServer.dir/rule:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/EchoServer.dir/rule
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/EchoServer.dir/rule
 .PHONY : examples/CMakeFiles/EchoServer.dir/rule
 
 # Convenience name for target.
@@ -166,12 +166,12 @@ EchoServer: examples/CMakeFiles/EchoServer.dir/rule
 
 # fast build rule for target.
 EchoServer/fast:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/build
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/build
 .PHONY : EchoServer/fast
 
 # Convenience name for target.
 examples/CMakeFiles/EchoClient.dir/rule:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/EchoClient.dir/rule
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/EchoClient.dir/rule
 .PHONY : examples/CMakeFiles/EchoClient.dir/rule
 
 # Convenience name for target.
@@ -181,12 +181,12 @@ EchoClient: examples/CMakeFiles/EchoClient.dir/rule
 
 # fast build rule for target.
 EchoClient/fast:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/build
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/build
 .PHONY : EchoClient/fast
 
 # Convenience name for target.
 examples/CMakeFiles/echo_pb.dir/rule:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/echo_pb.dir/rule
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 examples/CMakeFiles/echo_pb.dir/rule
 .PHONY : examples/CMakeFiles/echo_pb.dir/rule
 
 # Convenience name for target.
@@ -196,7 +196,7 @@ echo_pb: examples/CMakeFiles/echo_pb.dir/rule
 
 # fast build rule for target.
 echo_pb/fast:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/build
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/build
 .PHONY : echo_pb/fast
 
 EchoClient.o: EchoClient.cc.o
@@ -205,7 +205,7 @@ EchoClient.o: EchoClient.cc.o
 
 # target to build an object file
 EchoClient.cc.o:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/EchoClient.cc.o
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/EchoClient.cc.o
 .PHONY : EchoClient.cc.o
 
 EchoClient.i: EchoClient.cc.i
@@ -214,7 +214,7 @@ EchoClient.i: EchoClient.cc.i
 
 # target to preprocess a source file
 EchoClient.cc.i:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/EchoClient.cc.i
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/EchoClient.cc.i
 .PHONY : EchoClient.cc.i
 
 EchoClient.s: EchoClient.cc.s
@@ -223,7 +223,7 @@ EchoClient.s: EchoClient.cc.s
 
 # target to generate assembly for a file
 EchoClient.cc.s:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/EchoClient.cc.s
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoClient.dir/build.make examples/CMakeFiles/EchoClient.dir/EchoClient.cc.s
 .PHONY : EchoClient.cc.s
 
 EchoServer.o: EchoServer.cc.o
@@ -232,7 +232,7 @@ EchoServer.o: EchoServer.cc.o
 
 # target to build an object file
 EchoServer.cc.o:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/EchoServer.cc.o
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/EchoServer.cc.o
 .PHONY : EchoServer.cc.o
 
 EchoServer.i: EchoServer.cc.i
@@ -241,7 +241,7 @@ EchoServer.i: EchoServer.cc.i
 
 # target to preprocess a source file
 EchoServer.cc.i:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/EchoServer.cc.i
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/EchoServer.cc.i
 .PHONY : EchoServer.cc.i
 
 EchoServer.s: EchoServer.cc.s
@@ -250,7 +250,7 @@ EchoServer.s: EchoServer.cc.s
 
 # target to generate assembly for a file
 EchoServer.cc.s:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/EchoServer.cc.s
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/EchoServer.dir/build.make examples/CMakeFiles/EchoServer.dir/EchoServer.cc.s
 .PHONY : EchoServer.cc.s
 
 dqlib.pb.o: dqlib.pb.cc.o
@@ -259,7 +259,7 @@ dqlib.pb.o: dqlib.pb.cc.o
 
 # target to build an object file
 dqlib.pb.cc.o:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.pb.cc.o
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.pb.cc.o
 .PHONY : dqlib.pb.cc.o
 
 dqlib.pb.i: dqlib.pb.cc.i
@@ -268,7 +268,7 @@ dqlib.pb.i: dqlib.pb.cc.i
 
 # target to preprocess a source file
 dqlib.pb.cc.i:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.pb.cc.i
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.pb.cc.i
 .PHONY : dqlib.pb.cc.i
 
 dqlib.pb.s: dqlib.pb.cc.s
@@ -277,7 +277,7 @@ dqlib.pb.s: dqlib.pb.cc.s
 
 # target to generate assembly for a file
 dqlib.pb.cc.s:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.pb.cc.s
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.pb.cc.s
 .PHONY : dqlib.pb.cc.s
 
 dqlib.zqrpc.o: dqlib.zqrpc.cc.o
@@ -286,7 +286,7 @@ dqlib.zqrpc.o: dqlib.zqrpc.cc.o
 
 # target to build an object file
 dqlib.zqrpc.cc.o:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.zqrpc.cc.o
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.zqrpc.cc.o
 .PHONY : dqlib.zqrpc.cc.o
 
 dqlib.zqrpc.i: dqlib.zqrpc.cc.i
@@ -295,7 +295,7 @@ dqlib.zqrpc.i: dqlib.zqrpc.cc.i
 
 # target to preprocess a source file
 dqlib.zqrpc.cc.i:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.zqrpc.cc.i
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.zqrpc.cc.i
 .PHONY : dqlib.zqrpc.cc.i
 
 dqlib.zqrpc.s: dqlib.zqrpc.cc.s
@@ -304,7 +304,7 @@ dqlib.zqrpc.s: dqlib.zqrpc.cc.s
 
 # target to generate assembly for a file
 dqlib.zqrpc.cc.s:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.zqrpc.cc.s
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/dqlib.zqrpc.cc.s
 .PHONY : dqlib.zqrpc.cc.s
 
 echo.pb.o: echo.pb.cc.o
@@ -313,7 +313,7 @@ echo.pb.o: echo.pb.cc.o
 
 # target to build an object file
 echo.pb.cc.o:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.pb.cc.o
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.pb.cc.o
 .PHONY : echo.pb.cc.o
 
 echo.pb.i: echo.pb.cc.i
@@ -322,7 +322,7 @@ echo.pb.i: echo.pb.cc.i
 
 # target to preprocess a source file
 echo.pb.cc.i:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.pb.cc.i
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.pb.cc.i
 .PHONY : echo.pb.cc.i
 
 echo.pb.s: echo.pb.cc.s
@@ -331,7 +331,7 @@ echo.pb.s: echo.pb.cc.s
 
 # target to generate assembly for a file
 echo.pb.cc.s:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.pb.cc.s
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.pb.cc.s
 .PHONY : echo.pb.cc.s
 
 echo.zqrpc.o: echo.zqrpc.cc.o
@@ -340,7 +340,7 @@ echo.zqrpc.o: echo.zqrpc.cc.o
 
 # target to build an object file
 echo.zqrpc.cc.o:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.zqrpc.cc.o
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.zqrpc.cc.o
 .PHONY : echo.zqrpc.cc.o
 
 echo.zqrpc.i: echo.zqrpc.cc.i
@@ -349,7 +349,7 @@ echo.zqrpc.i: echo.zqrpc.cc.i
 
 # target to preprocess a source file
 echo.zqrpc.cc.i:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.zqrpc.cc.i
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.zqrpc.cc.i
 .PHONY : echo.zqrpc.cc.i
 
 echo.zqrpc.s: echo.zqrpc.cc.s
@@ -358,7 +358,7 @@ echo.zqrpc.s: echo.zqrpc.cc.s
 
 # target to generate assembly for a file
 echo.zqrpc.cc.s:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.zqrpc.cc.s
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/echo.zqrpc.cc.s
 .PHONY : echo.zqrpc.cc.s
 
 inirw.o: inirw.c.o
@@ -367,7 +367,7 @@ inirw.o: inirw.c.o
 
 # target to build an object file
 inirw.c.o:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/inirw.c.o
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/inirw.c.o
 .PHONY : inirw.c.o
 
 inirw.i: inirw.c.i
@@ -376,7 +376,7 @@ inirw.i: inirw.c.i
 
 # target to preprocess a source file
 inirw.c.i:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/inirw.c.i
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/inirw.c.i
 .PHONY : inirw.c.i
 
 inirw.s: inirw.c.s
@@ -385,7 +385,7 @@ inirw.s: inirw.c.s
 
 # target to generate assembly for a file
 inirw.c.s:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/inirw.c.s
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(MAKE) -f examples/CMakeFiles/echo_pb.dir/build.make examples/CMakeFiles/echo_pb.dir/inirw.c.s
 .PHONY : inirw.c.s
 
 # Help Target
@@ -435,6 +435,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /media/psf/Home/Documents/work-ubuntu/zqrpc-master/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /media/psf/Home/Documents/work-ubuntu/zqrpc/cmake-build-debug && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
