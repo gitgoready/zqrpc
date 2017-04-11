@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Y:\Documents\work-ubuntu\zqrpc-master\buildwin\examples\echo.pb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Y:\Documents\work-ubuntu\zqrpc-master\buildwin\examples\echo.zqrpc.cc" />
+    <ClCompile Include="dqlib.zqrpc.cc" />
+    <ClCompile Include="dqlib.pb.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Y:\Documents\work-ubuntu\zqrpc-master\buildwin\examples\echo.pb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Y:\Documents\work-ubuntu\zqrpc-master\buildwin\examples\echo.zqrpc.h" />
+    <ClInclude Include="dqlib.zqrpc.h" />
+    <ClInclude Include="dqlib.pb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Y:\Documents\work-ubuntu\zqrpc-master\examples\CMakeLists.txt" />
+    <CustomBuild Include="Y:\Documents\work-ubuntu\zqrpc-master\buildwin\CMakeFiles\7d87b46633bd0d901a16f34c5026af50\echo.pb.cc.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5BB23E48-5611-373F-B168-8200D383A602}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{312E5118-1300-31A2-A6E4-1F43123AB400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{07BDDFA7-98A5-310D-B218-7CB8E9F6FD5B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
